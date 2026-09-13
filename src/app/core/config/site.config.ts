@@ -21,7 +21,7 @@ export const SITE = {
     followers: '+8 mil',
   },
   portrait: 'images/renato.jpg',
-  ogImage: 'images/zeus-braco.jpg',
+  ogImage: 'images/samurai-antebraco.jpg',
 } as const;
 
 export interface NavItem {
