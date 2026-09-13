@@ -69,7 +69,7 @@ import { Reveal } from '@shared/directives/reveal.directive';
     }
     .about__photo {
       position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%;
-      border-radius: var(--radius); filter: grayscale(1) contrast(1.05);
+      border-radius: var(--radius);
     }
 
     .about__text { display: grid; gap: 1rem; justify-items: start; }

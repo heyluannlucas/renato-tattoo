@@ -21,7 +21,7 @@ import { Lightbox } from '@shared/ui/lightbox/lightbox';
           <h2 id="works-title" class="h2">Trabalhos <em>recentes</em></h2>
           <span class="divider"></span>
           <p class="lead">
-            Samurais, animais, cultura pop e arte sacra. Cada peça é desenhada do zero para o corpo de quem vai
+            Do antebraço à panturrilha, do samurai à arte sacra. Cada peça é desenhada do zero para o corpo de quem vai
             usá-la.
           </p>
         </div>
