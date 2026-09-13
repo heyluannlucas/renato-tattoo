@@ -1,5 +1,9 @@
-<dialog #dialog class="lightbox" aria-label="Visualizador de obras" (close)="close()" (keydown)="onKeydown($event)">
+<dialog #dialog class="lightbox" aria-label="Visualizador do portfólio" (close)="close()" (keydown)="onKeydown($event)">
   @if (current(); as work) {
+    <button type="button" class="lightbox__close" (click)="close()" aria-label="Fechar">
+      <app-icon name="close" />
+    </button>
+
     <div
       class="lightbox__stage"
       (click)="onStageClick($event)"
@@ -16,9 +20,19 @@
     </div>
 
     <div class="lightbox__bar">
-      <button type="button" class="text-btn" (click)="step(-1)" [disabled]="total() < 2">Anterior</button>
-      <button type="button" class="text-btn" (click)="close()">Fechar</button>
-      <button type="button" class="text-btn" (click)="step(1)" [disabled]="total() < 2">Próxima</button>
+      <button type="button" class="text-btn" (click)="step(-1)" [disabled]="total() < 2">
+        <app-icon name="arrow-left" /><span class="lightbox__label">Anterior</span>
+      </button>
+
+      <div class="lightbox__info">
+        <p class="lightbox__title">{{ work.title }}</p>
+        <p class="lightbox__meta">{{ work.placement }} · {{ pad(index()! + 1) }} de {{ pad(total()) }}</p>
+        <button type="button" class="btn btn--gold btn--sm" (click)="requestWork(work)">Agendar algo parecido</button>
+      </div>
+
+      <button type="button" class="text-btn" (click)="step(1)" [disabled]="total() < 2">
+        <span class="lightbox__label">Próxima</span><app-icon name="arrow-right" />
+      </button>
     </div>
   }
 </dialog>

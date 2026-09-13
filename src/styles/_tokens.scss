@@ -1,33 +1,29 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  --c-bg: #f8f4ef;
-  --c-surface: #f0e9e0;
-  --c-card: #ffffff;
-  --c-text: #1f1b17;
-  --c-text-muted: #6a6159;
-  --c-line: rgb(31 27 23 / 0.1);
-  --c-accent: #a9502c;
-  --c-accent-hover: #8f4222;
-  --c-gold: #b48a45;
-  --c-dark: #1f1b17;
-  --c-whatsapp: #128c4a;
-  --c-whatsapp-hover: #0f7a40;
+  --c-bg: #0b0b0b;
+  --c-surface: #121211;
+  --c-card: #1a1917;
+  --c-text: #ece7df;
+  --c-text-muted: #9c968d;
+  --c-line: rgb(236 231 223 / 0.09);
+  --c-gold: #c9a45c;
+  --c-gold-light: #e2c285;
+  --c-gold-line: rgb(201 164 92 / 0.35);
+  --c-on-gold: #14110b;
 
-  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --container: 1240px;
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --space-section: clamp(4.5rem, 9vw, 7.5rem);
-  --header-h: 68px;
+  --container: 1160px;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+  --space-section: clamp(4rem, 8vw, 6.5rem);
+  --header-h: 64px;
 
-  --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 1px 2px rgb(31 27 23 / 0.06), 0 12px 32px rgb(31 27 23 / 0.08);
+  --radius: 4px;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast: 180ms;
-  --dur-base: 350ms;
-  --dur-slow: 800ms;
+  --dur-fast: 200ms;
+  --dur-base: 400ms;
+  --dur-slow: 900ms;
 }

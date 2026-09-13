@@ -21,7 +21,7 @@
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(24px);
   transition:
     opacity var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms),
     transform var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms);

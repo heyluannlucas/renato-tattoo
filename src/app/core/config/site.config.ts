@@ -20,8 +20,8 @@ export const SITE = {
     url: 'https://www.instagram.com/renato_tattoo/',
     followers: '+8 mil',
   },
-  portrait: '/images/renato.jpg',
-  ogImage: '/images/work-03.jpg',
+  portrait: 'images/renato.jpg',
+  ogImage: 'images/work-03.jpg',
 } as const;
 
 export interface NavItem {
@@ -31,8 +31,7 @@ export interface NavItem {
 
 export const MAIN_NAV: readonly NavItem[] = [
   { label: 'Trabalhos', fragment: 'trabalhos' },
-  { label: 'Sobre mim', fragment: 'sobre' },
-  { label: 'Como funciona', fragment: 'como-funciona' },
-  { label: 'Dúvidas', fragment: 'duvidas' },
-  { label: 'Onde fica', fragment: 'localizacao' },
+  { label: 'Sobre', fragment: 'sobre' },
+  { label: 'Processo', fragment: 'processo' },
+  { label: 'Contato', fragment: 'agendar' },
 ];

@@ -15,8 +15,8 @@ body {
   background: var(--c-bg);
   color: var(--c-text);
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.9375rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 
   &.no-scroll {
@@ -54,6 +54,7 @@ a {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
   color: inherit;
@@ -67,12 +68,12 @@ button {
 }
 
 ::selection {
-  background: var(--c-accent);
-  color: #fff;
+  background: var(--c-gold);
+  color: var(--c-on-gold);
 }
 
 :focus-visible {
-  outline: 2px solid var(--c-accent);
+  outline: 2px solid var(--c-gold);
   outline-offset: 3px;
 }
 

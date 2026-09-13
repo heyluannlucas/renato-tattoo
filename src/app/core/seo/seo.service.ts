@@ -32,7 +32,7 @@ export class SeoService {
       ? `${seo.title} · ${SITE.name}`
       : `${SITE.name} — ${SITE.tagline} em ${SITE.location.city}-${SITE.location.state}`;
     const url = SITE.url + path.split(/[?#]/)[0];
-    const image = SITE.url + (seo.image ?? SITE.ogImage);
+    const image = `${SITE.url}/${seo.image ?? SITE.ogImage}`;
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: seo.description });

@@ -5,9 +5,12 @@ export interface ImageAsset {
   alt: string;
 }
 
+export type WorkCategory = 'retrato' | 'sacra' | 'composicao';
+
 export interface Work {
   id: string;
   title: string;
+  category: WorkCategory;
   placement: string;
   image: ImageAsset;
 }

@@ -1,14 +1,18 @@
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  min-height: 3.25rem;
-  padding: 0 1.5rem;
+  min-height: 3rem;
+  padding: 0 1.75rem;
+  overflow: hidden;
   border: 1px solid transparent;
-  border-radius: 999px;
-  font-size: 0.9375rem;
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
   font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   white-space: nowrap;
   transition:
     background-color var(--dur-fast) ease,
@@ -17,7 +21,7 @@
     transform var(--dur-fast) ease;
 
   &:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
   }
 
   app-icon {
@@ -25,61 +29,70 @@
   }
 }
 
-.btn--primary {
-  background: var(--c-accent);
-  color: #fff;
+.btn--gold {
+  background: var(--c-gold);
+  color: var(--c-on-gold);
+
+  // brilho que atravessa o botão no hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+    transform: translateX(-100%);
+  }
 
   &:hover {
-    background: var(--c-accent-hover);
+    background: var(--c-gold-light);
+
+    &::after {
+      transform: translateX(100%);
+      transition: transform 700ms ease;
+    }
   }
 }
 
-.btn--whatsapp {
-  background: var(--c-whatsapp);
-  color: #fff;
-
-  &:hover {
-    background: var(--c-whatsapp-hover);
-  }
-}
-
-.btn--ghost {
-  border-color: rgb(31 27 23 / 0.2);
+.btn--outline {
+  border-color: var(--c-gold-line);
   color: var(--c-text);
 
   &:hover {
-    border-color: var(--c-text);
-  }
-}
-
-.btn--light {
-  background: #fff;
-  color: var(--c-text);
-
-  &:hover {
-    background: var(--c-surface);
+    border-color: var(--c-gold);
+    color: var(--c-gold-light);
   }
 }
 
 .btn--sm {
-  min-height: 2.625rem;
+  min-height: 2.5rem;
   padding: 0 1.125rem;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+}
+
+.btn--block {
+  width: 100%;
 }
 
 .text-btn {
-  font-size: 0.875rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 0.25rem;
-  color: rgb(255 255 255 / 0.75);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
   transition: color var(--dur-fast) ease;
 
   &:hover {
-    color: #fff;
+    color: var(--c-gold-light);
   }
 
   &:disabled {
     opacity: 0.35;
     pointer-events: none;
+  }
+
+  app-icon {
+    font-size: 1.125rem;
   }
 }

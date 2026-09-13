@@ -14,7 +14,8 @@ export type IconName =
   | 'chat'
   | 'check'
   | 'pin'
-  | 'clock';
+  | 'clock'
+  | 'menu';
 
 @Component({
   selector: 'app-icon',
@@ -64,6 +65,9 @@ export type IconName =
       }
       @case ('pin') {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.3 7-11.5a7 7 0 0 0-14 0C5 14.7 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+      }
+      @case ('menu') {
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
       }
       @case ('clock') {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>

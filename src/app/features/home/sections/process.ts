@@ -8,17 +8,18 @@ import { Reveal } from '@shared/directives/reveal.directive';
   imports: [Reveal],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section class="section process" id="como-funciona" aria-labelledby="process-title">
+    <section class="section" id="processo" aria-labelledby="process-title">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Como funciona</p>
-          <h2 id="process-title" class="h2">Da ideia à tattoo <em>em três passos</em></h2>
+        <div class="section-head section-head--center" appReveal>
+          <p class="label">Processo</p>
+          <h2 id="process-title" class="h2">Como <em>funciona</em></h2>
+          <span class="divider"></span>
         </div>
 
         <ol class="steps">
           @for (step of steps; track step.title; let i = $index) {
-            <li class="step" [appReveal]="i * 90">
-              <span class="step__num">{{ i + 1 }}</span>
+            <li class="step" [appReveal]="i * 150">
+              <span class="step__num">0{{ i + 1 }}</span>
               <h3 class="step__title">{{ step.title }}</h3>
               <p class="step__text">{{ step.description }}</p>
             </li>
@@ -28,16 +29,17 @@ import { Reveal } from '@shared/directives/reveal.directive';
     </section>
   `,
   styles: `
-    .process { background: var(--c-surface); }
     .steps { display: grid; gap: 1rem; }
-    @media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
-    .step { display: grid; align-content: start; gap: 0.75rem; padding: 1.75rem; border-radius: var(--radius); background: var(--c-card); }
-    .step__num {
-      display: grid; place-items: center; width: 2.5rem; height: 2.5rem; margin-bottom: 0.5rem;
-      border-radius: 50%; background: var(--c-accent); color: #fff; font-weight: 600;
+    @media (min-width: 860px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+    .step {
+      position: relative; display: grid; gap: 0.625rem; justify-items: center; text-align: center;
+      padding: 2.25rem 1.75rem; border: 1px solid var(--c-line); border-radius: var(--radius);
+      transition: border-color var(--dur-base) ease, transform var(--dur-base) var(--ease-out);
     }
-    .step__title { font-family: var(--font-display); font-weight: 400; font-size: 1.625rem; line-height: 1.15; }
-    .step__text { color: var(--c-text-muted); }
+    .step:hover { border-color: var(--c-gold-line); transform: translateY(-4px); }
+    .step__num { font-family: var(--font-display); font-size: 2.25rem; font-weight: 500; line-height: 1; color: var(--c-gold); }
+    .step__title { margin-top: 0.25rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+    .step__text { max-width: 20rem; font-size: 0.875rem; color: var(--c-text-muted); }
   `,
 })
 export class Process {

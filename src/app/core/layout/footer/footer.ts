@@ -3,46 +3,53 @@ import { RouterLink } from '@angular/router';
 
 import { MAIN_NAV, SITE } from '@core/config/site.config';
 import { whatsappLink } from '@core/utils/whatsapp';
+import { Icon } from '@shared/ui/icon/icon';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink],
+  imports: [RouterLink, Icon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <footer class="footer">
-      <div class="container grid">
-        <div>
-          <p class="brand">Renato <em>Tattoo</em></p>
-          <p class="muted">Realismo em preto e cinza em {{ site.location.city }}, {{ site.location.state }}.</p>
-        </div>
+      <div class="container top">
+        <a routerLink="/" class="brand">Renato <span>Tattoo</span></a>
+
         <nav aria-label="Rodapé">
-          <ul class="links">
+          <ul class="nav">
             @for (item of nav; track item.fragment) {
               <li><a routerLink="/" [fragment]="item.fragment">{{ item.label }}</a></li>
             }
           </ul>
         </nav>
-        <ul class="links">
-          <li><a [href]="whatsappHref" target="_blank" rel="noopener">WhatsApp {{ site.whatsapp.display }}</a></li>
-          <li><a [href]="site.instagram.url" target="_blank" rel="noopener">Instagram {{ site.instagram.handle }}</a></li>
-          <li class="muted">{{ site.location.street }} - {{ site.location.district }}</li>
-          <li class="muted">{{ site.hours }}</li>
-        </ul>
+
+        <div class="social">
+          <a [href]="whatsappHref" target="_blank" rel="noopener" aria-label="WhatsApp"><app-icon name="whatsapp" /></a>
+          <a [href]="site.instagram.url" target="_blank" rel="noopener" aria-label="Instagram"><app-icon name="instagram" /></a>
+        </div>
       </div>
-      <p class="container copy">© {{ year }} {{ site.name }}</p>
+
+      <p class="container copy">© {{ year }} {{ site.name }} · {{ site.location.street }} - {{ site.location.district }}, {{ site.location.city }}-{{ site.location.state }}</p>
     </footer>
   `,
   styles: `
-    .footer { padding-top: 3.5rem; border-top: 1px solid var(--c-line); font-size: 0.9375rem; }
-    .grid { display: grid; gap: 2rem; }
-    @media (min-width: 700px) { .grid { grid-template-columns: 1.5fr 1fr 1fr; } }
-    .brand { font-family: var(--font-display); font-size: 1.75rem; line-height: 1; margin-bottom: 0.75rem; }
-    .brand em { color: var(--c-accent); }
-    .muted { color: var(--c-text-muted); }
-    .links { display: grid; gap: 0.5rem; }
-    .links a { color: var(--c-text-muted); transition: color var(--dur-fast) ease; }
-    .links a:hover { color: var(--c-accent); }
-    .copy { padding-block: 2rem; margin-top: 2.5rem; border-top: 1px solid var(--c-line); font-size: 0.8125rem; color: var(--c-text-muted); }
+    .footer { border-top: 1px solid var(--c-line); }
+    .top {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;
+      padding-block: 2.5rem;
+    }
+    .brand { font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; line-height: 1; }
+    .brand span { color: var(--c-gold); font-style: italic; font-weight: 500; }
+    .nav { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; }
+    .nav a { font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-text-muted); transition: color var(--dur-fast) ease; }
+    .nav a:hover { color: var(--c-gold-light); }
+    .social { display: flex; gap: 0.5rem; }
+    .social a {
+      display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--c-line); border-radius: 50%;
+      font-size: 1.125rem; color: var(--c-text-muted);
+      transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+    }
+    .social a:hover { color: var(--c-gold); border-color: var(--c-gold-line); }
+    .copy { padding-block: 1.25rem; border-top: 1px solid var(--c-line); font-size: 0.75rem; text-align: center; color: var(--c-text-muted); }
   `,
 })
 export class Footer {

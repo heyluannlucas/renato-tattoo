@@ -8,13 +8,16 @@ import {
   inject,
   input,
   model,
+  output,
   viewChild,
 } from '@angular/core';
 
 import { Work } from '@shared/models/work.model';
+import { Icon } from '@shared/ui/icon/icon';
 
 @Component({
   selector: 'app-lightbox',
+  imports: [Icon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './lightbox.html',
   styleUrl: './lightbox.scss',
@@ -22,6 +25,7 @@ import { Work } from '@shared/models/work.model';
 export class Lightbox {
   readonly works = input.required<readonly Work[]>();
   readonly index = model<number | null>(null);
+  readonly request = output<Work>();
 
   private readonly dialog = viewChild.required<ElementRef<HTMLDialogElement>>('dialog');
   private readonly document = inject(DOCUMENT);
@@ -48,6 +52,11 @@ export class Lightbox {
     if (i === null) return;
     const total = this.total();
     this.index.set((i + delta + total) % total);
+  }
+
+  protected requestWork(work: Work): void {
+    this.close();
+    this.request.emit(work);
   }
 
   protected close(): void {

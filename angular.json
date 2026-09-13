@@ -66,6 +66,10 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github-pages": {
+              "outputMode": "static",
+              "baseHref": "/renato-tattoo/"
             }
           },
           "defaultConfiguration": "production"
