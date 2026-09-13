@@ -12,7 +12,7 @@ import { Reveal } from '@shared/directives/reveal.directive';
       <div class="container">
         <div class="section-head section-head--center" appReveal>
           <p class="label">Processo</p>
-          <h2 id="process-title" class="h2">Como <em>funciona</em></h2>
+          <h2 id="process-title" class="h2">Da ideia <em>à cicatrização</em></h2>
           <span class="divider"></span>
         </div>
 

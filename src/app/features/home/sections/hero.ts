@@ -19,13 +19,13 @@ import { SITE } from '@core/config/site.config';
       />
 
       <div class="container hero__content">
-        <p class="label hero__in" style="--d: 100ms">Realismo em preto e cinza</p>
+        <p class="label hero__in" style="--d: 100ms">Tatuador em {{ site.location.city }}-{{ site.location.state }}</p>
         <h1 id="hero-title" class="h1 hero__in" style="--d: 250ms">
-          Tatuagens que contam <em>a sua história.</em>
+          Realismo feito à mão, <em>pensado para durar.</em>
         </h1>
         <p class="lead hero__in" style="--d: 400ms">
-          Retratos, arte sacra e composições autorais, criados do zero em estúdio próprio em
-          {{ site.location.city }}-{{ site.location.state }}.
+          Transformo a sua ideia em uma tatuagem exclusiva, com estudo de luz, sombra e anatomia antes de cada
+          sessão.
         </p>
         <div class="hero__actions hero__in" style="--d: 550ms">
           <a class="btn btn--gold" routerLink="/" fragment="agendar">Agendar horário</a>

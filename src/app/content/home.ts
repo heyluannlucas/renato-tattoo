@@ -2,16 +2,19 @@ import { ProcessStep } from '@shared/models/work.model';
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
   {
-    title: 'Conversa',
-    description: 'Você envia a ideia, uma referência e o local do corpo. Eu retorno com uma estimativa, sem compromisso.',
+    title: 'Orçamento',
+    description:
+      'Você me conta a ideia, envia referências e diz o local do corpo. Eu respondo com valor e disponibilidade, sem compromisso.',
   },
   {
-    title: 'Desenho',
-    description: 'Crio uma arte exclusiva, estudando luz, volume e o formato do seu corpo.',
+    title: 'Criação',
+    description:
+      'Desenvolvo uma arte exclusiva, pensada para o formato do seu corpo, e você aprova o desenho antes da sessão.',
   },
   {
-    title: 'Sessão',
-    description: 'Material 100% descartável, esterilização certificada e acompanhamento até a cicatrização.',
+    title: 'Sessão e cuidados',
+    description:
+      'Material 100% descartável e esterilização certificada. Depois, você recebe as orientações e tem acompanhamento até cicatrizar.',
   },
 ];
 

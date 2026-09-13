@@ -9,7 +9,7 @@ export const routes: Routes = [
     data: {
       seo: {
         description:
-          'Sou o Renato, tatuador de realismo em preto e cinza em Salgueiro-PE. Retratos, arte sacra e braços fechados. Peça seu orçamento pelo WhatsApp.',
+          'Renato Tattoo: tatuagens realistas em preto e cinza em Salgueiro-PE. Arte exclusiva, estúdio próprio e orçamento pelo WhatsApp.',
       } satisfies PageSeo,
     },
   },

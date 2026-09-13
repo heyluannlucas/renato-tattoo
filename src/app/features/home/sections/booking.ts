@@ -21,11 +21,11 @@ const query = encodeURIComponent(`${address}, ${location.zip}`);
       <div class="container booking">
         <div class="info" appReveal>
           <p class="label">Contato</p>
-          <h2 id="booking-title" class="h2">Agende seu <em>horário</em></h2>
+          <h2 id="booking-title" class="h2">Vamos criar <em>a sua tatuagem?</em></h2>
           <span class="divider"></span>
           <p class="lead">
-            Conte sua ideia pelo formulário. A mensagem é enviada direto para o meu WhatsApp e eu retorno com o
-            orçamento.
+            Preencha o formulário e a mensagem chega pronta no meu WhatsApp. Se tiver fotos de referência, é só
+            enviar na conversa.
           </p>
 
           <ul class="contacts">
@@ -71,19 +71,20 @@ const query = encodeURIComponent(`${address}, ${location.zip}`);
             <textarea
               id="bk-idea"
               rows="4"
-              placeholder="Descreva a tatuagem que você imagina"
+              placeholder="Ex.: samurai no antebraço, com fundo em fumaça"
               [value]="idea()"
               (input)="idea.set(value($event))"
             ></textarea>
           </div>
 
           @if (showError() && !valid()) {
-            <p class="error" role="alert">Preencha seu nome e a sua ideia.</p>
+            <p class="error" role="alert">Informe seu nome e descreva a sua ideia para continuar.</p>
           }
 
           <button type="submit" class="btn btn--gold btn--block">
-            <app-icon name="whatsapp" /> Enviar pelo WhatsApp
+            <app-icon name="whatsapp" /> Pedir orçamento
           </button>
+          <p class="note">Sem compromisso. Respondo com valor e horários disponíveis.</p>
         </form>
       </div>
 
@@ -154,6 +155,7 @@ const query = encodeURIComponent(`${address}, ${location.zip}`);
     .reference button:hover { color: var(--c-gold); }
 
     .error { font-size: 0.8125rem; color: #e09a86; }
+    .note { font-size: 0.75rem; text-align: center; color: var(--c-text-muted); }
 
     .location {
       display: grid; margin-top: clamp(3rem, 6vw, 4.5rem); overflow: hidden;
@@ -197,7 +199,7 @@ export class Booking {
       ['Ideia', this.idea().trim()],
     ];
     const lines = details.filter(([, value]) => value).map(([label, value]) => `${label}: ${value}`);
-    return ['Olá, Renato! Vim pelo site e gostaria de agendar.', '', ...lines].join('\n');
+    return ['Olá, Renato! Vim pelo site e gostaria de um orçamento.', '', ...lines].join('\n');
   });
 
   protected value(event: Event): string {

@@ -25,15 +25,16 @@ import { Reveal } from '@shared/directives/reveal.directive';
 
         <div class="about__text" [appReveal]="150">
           <p class="label">Sobre</p>
-          <h2 id="about-title" class="h2">Prazer, <em>Renato.</em></h2>
+          <h2 id="about-title" class="h2">Prazer, <em>eu sou o Renato.</em></h2>
           <span class="divider"></span>
           <p>
-            Sou tatuador especializado em realismo em preto e cinza, com estúdio próprio em
-            {{ site.location.city }}-{{ site.location.state }}. Retratos, arte sacra e fechamentos são o centro do meu
-            trabalho.
+            Sou tatuador especializado em realismo em preto e cinza e atendo no meu próprio estúdio, em
+            {{ site.location.city }}-{{ site.location.state }}. Faço desde peças no antebraço até braços fechados, sempre
+            com arte criada exclusivamente para cada cliente.
           </p>
           <p>
-            Cada peça começa com estudo de referência, luz e volume, para que a tatuagem continue bonita por muitos anos.
+            Antes de começar, estudo a referência, a luz e o volume da peça. Na sessão, trabalho sem pressa. O resultado
+            é uma tatuagem com contraste e profundidade, que continua bonita com o passar dos anos.
           </p>
 
           <dl class="stats">
@@ -46,7 +47,7 @@ import { Reveal } from '@shared/directives/reveal.directive';
               <dd>Descartável</dd>
             </div>
             <div>
-              <dt>1 a 1</dt>
+              <dt>Autoral</dt>
               <dd>Arte exclusiva</dd>
             </div>
           </dl>

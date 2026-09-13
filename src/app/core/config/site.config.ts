@@ -13,7 +13,7 @@ export const SITE = {
   whatsapp: {
     phone: '5587988269624',
     display: '(87) 98826-9624',
-    defaultMessage: 'Oi, Renato! Vim pelo site e quero fazer uma tattoo.',
+    defaultMessage: 'Olá, Renato! Vim pelo site e gostaria de fazer uma tatuagem.',
   },
   instagram: {
     handle: '@renato_tattoo',

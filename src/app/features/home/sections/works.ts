@@ -20,6 +20,10 @@ import { Lightbox } from '@shared/ui/lightbox/lightbox';
           <p class="label">Portfólio</p>
           <h2 id="works-title" class="h2">Trabalhos <em>recentes</em></h2>
           <span class="divider"></span>
+          <p class="lead">
+            Samurais, animais, cultura pop e arte sacra. Cada peça é desenhada do zero para o corpo de quem vai
+            usá-la.
+          </p>
         </div>
 
         <ul class="grid">
@@ -47,7 +51,7 @@ import { Lightbox } from '@shared/ui/lightbox/lightbox';
 
         <div class="more" appReveal>
           <a class="btn btn--outline" [href]="site.instagram.url" target="_blank" rel="noopener">
-            <app-icon name="instagram" /> Mais no Instagram
+            <app-icon name="instagram" /> Ver mais no Instagram
           </a>
         </div>
       </div>
