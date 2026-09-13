@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+
+  --c-bg: #f8f4ef;
+  --c-surface: #f0e9e0;
+  --c-card: #ffffff;
+  --c-text: #1f1b17;
+  --c-text-muted: #6a6159;
+  --c-line: rgb(31 27 23 / 0.1);
+  --c-accent: #a9502c;
+  --c-accent-hover: #8f4222;
+  --c-gold: #b48a45;
+  --c-dark: #1f1b17;
+  --c-whatsapp: #128c4a;
+  --c-whatsapp-hover: #0f7a40;
+
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --container: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --space-section: clamp(4.5rem, 9vw, 7.5rem);
+  --header-h: 68px;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgb(31 27 23 / 0.06), 0 12px 32px rgb(31 27 23 / 0.08);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-base: 350ms;
+  --dur-slow: 800ms;
+}

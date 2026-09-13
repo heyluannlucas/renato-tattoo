@@ -1,0 +1,24 @@
+<dialog #dialog class="lightbox" aria-label="Visualizador de obras" (close)="close()" (keydown)="onKeydown($event)">
+  @if (current(); as work) {
+    <div
+      class="lightbox__stage"
+      (click)="onStageClick($event)"
+      (pointerdown)="onPointerDown($event)"
+      (pointerup)="onPointerUp($event)"
+    >
+      <img
+        [src]="work.image.src"
+        [alt]="work.image.alt"
+        [width]="work.image.width"
+        [height]="work.image.height"
+        draggable="false"
+      />
+    </div>
+
+    <div class="lightbox__bar">
+      <button type="button" class="text-btn" (click)="step(-1)" [disabled]="total() < 2">Anterior</button>
+      <button type="button" class="text-btn" (click)="close()">Fechar</button>
+      <button type="button" class="text-btn" (click)="step(1)" [disabled]="total() < 2">Próxima</button>
+    </div>
+  }
+</dialog>

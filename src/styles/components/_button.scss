@@ -1,0 +1,85 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  min-height: 3.25rem;
+  padding: 0 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  app-icon {
+    font-size: 1.125rem;
+  }
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: #fff;
+
+  &:hover {
+    background: var(--c-accent-hover);
+  }
+}
+
+.btn--whatsapp {
+  background: var(--c-whatsapp);
+  color: #fff;
+
+  &:hover {
+    background: var(--c-whatsapp-hover);
+  }
+}
+
+.btn--ghost {
+  border-color: rgb(31 27 23 / 0.2);
+  color: var(--c-text);
+
+  &:hover {
+    border-color: var(--c-text);
+  }
+}
+
+.btn--light {
+  background: #fff;
+  color: var(--c-text);
+
+  &:hover {
+    background: var(--c-surface);
+  }
+}
+
+.btn--sm {
+  min-height: 2.625rem;
+  padding: 0 1.125rem;
+  font-size: 0.875rem;
+}
+
+.text-btn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  color: rgb(255 255 255 / 0.75);
+  transition: color var(--dur-fast) ease;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+}

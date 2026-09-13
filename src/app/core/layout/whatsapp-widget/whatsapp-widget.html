@@ -1,0 +1,70 @@
+@if (open()) {
+  <section class="panel" role="dialog" aria-labelledby="wa-title">
+    <header class="panel__head">
+      <img
+        class="panel__avatar"
+        [src]="site.portrait"
+        appHideOnError
+        width="40"
+        height="40"
+        alt=""
+      />
+      <div class="panel__who">
+        <p id="wa-title" class="panel__name">Renato</p>
+        <p class="panel__status">Responde pelo WhatsApp</p>
+      </div>
+      <button type="button" class="panel__close" (click)="close()" aria-label="Fechar conversa">
+        <app-icon name="close" />
+      </button>
+    </header>
+
+    <div class="panel__body">
+      <p class="bubble">
+        Oi! Aqui é o Renato 👋<br />
+        Me conta sua ideia de tattoo — pode ser uma frase, uma foto de referência ou só a vontade. Eu te respondo
+        no WhatsApp.
+      </p>
+
+      <div class="quick">
+        @for (reply of quickReplies; track reply) {
+          <button type="button" class="quick__btn" (click)="pick(reply)">{{ reply }}</button>
+        }
+      </div>
+    </div>
+
+    <form class="panel__form" (submit)="$event.preventDefault(); send()">
+      <label class="visually-hidden" for="wa-message">Sua mensagem</label>
+      <textarea
+        #input
+        id="wa-message"
+        rows="2"
+        placeholder="Escreva sua mensagem…"
+        [value]="message()"
+        (input)="onInput($event)"
+        (keydown)="onKeydown($event)"
+      ></textarea>
+      <button type="submit" class="panel__send" aria-label="Enviar pelo WhatsApp">
+        <app-icon name="arrow-up-right" />
+      </button>
+    </form>
+  </section>
+}
+
+@if (teaser() && !open()) {
+  <div class="teaser">
+    <button type="button" class="teaser__text" (click)="show()">Oi! Me conta sua ideia de tattoo 👋</button>
+    <button type="button" class="teaser__close" (click)="dismissTeaser()" aria-label="Dispensar">
+      <app-icon name="close" />
+    </button>
+  </div>
+}
+
+<button
+  type="button"
+  class="fab"
+  (click)="toggle()"
+  [attr.aria-expanded]="open()"
+  [attr.aria-label]="open() ? 'Fechar conversa' : 'Falar com o Renato no WhatsApp'"
+>
+  <app-icon [name]="open() ? 'close' : 'whatsapp'" />
+</button>
