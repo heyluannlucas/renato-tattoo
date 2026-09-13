@@ -105,14 +105,14 @@ export const WORKS: readonly Work[] = [
   },
   {
     id: 'jesus-fechamento',
-    title: 'Jesus',
+    title: 'Jesus e Leão de Judá',
     category: 'sacra',
     placement: 'Braço fechado',
     image: {
       src: 'images/jesus-fechamento.jpg',
-      width: 1200,
+      width: 1207,
       height: 1600,
-      alt: 'Braço fechado em realismo preto e cinza com rosto de Jesus olhando para o alto',
+      alt: 'Braço fechado em realismo preto e cinza: rosto de Jesus olhando para o alto, travessia e leão',
     },
   },
 ];
