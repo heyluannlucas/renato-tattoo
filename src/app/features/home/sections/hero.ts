@@ -11,9 +11,9 @@ import { SITE } from '@core/config/site.config';
     <section class="hero" aria-labelledby="hero-title">
       <img
         class="hero__bg"
-        src="images/work-02.jpg"
-        width="900"
-        height="1068"
+        src="images/zeus-braco.jpg"
+        width="1440"
+        height="1454"
         fetchpriority="high"
         alt=""
       />
@@ -54,7 +54,7 @@ import { SITE } from '@core/config/site.config';
       .hero { align-items: end; }
     }
     .hero__bg {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 30%;
       animation: slow-zoom 18s ease-out both;
     }
     @media (min-width: 760px) {
